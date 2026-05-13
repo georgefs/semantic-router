@@ -1,0 +1,28 @@
+classifier:
+  category_model:
+    model_id: "qwen3_generative_classifier"
+    threshold: 0.75
+    use_cpu: true
+    use_modernbert: false
+    use_mmbert_32k: false
+    category_mapping_path: "models/category_mapping.json"
+    fallback_category: "other"
+
+categories:
+  - name: "law"
+    mmlu_categories:
+      - "law"
+    model_scores:
+      - model: "qwen2.5-coder"
+        score: 0.2
+      - model: "gpt-4.1"
+        score: 0.8
+
+  - name: "computer science"
+    mmlu_categories:
+      - "computer science"
+    model_scores:
+      - model: "qwen2.5-coder"
+        score: 0.9
+      - model: "gpt-4.1"
+        score: 0.3

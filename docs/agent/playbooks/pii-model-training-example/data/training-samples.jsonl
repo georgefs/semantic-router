@@ -1,0 +1,6 @@
+{"full_text":"My name is John Smith and my email is john.smith@example.com.","spans":[{"start_position":11,"end_position":21,"entity_type":"PERSON"},{"start_position":38,"end_position":61,"entity_type":"EMAIL"}]}
+{"full_text":"Please call me at 555-123-4567 or text me later.","spans":[{"start_position":18,"end_position":30,"entity_type":"PHONE_NUMBER"}]}
+{"full_text":"Send the package to 123 Main Street, New York, NY 10001.","spans":[{"start_position":20,"end_position":56,"entity_type":"LOCATION"}]}
+{"full_text":"My SSN is 123-45-6789 and my credit card number is 4111 1111 1111 1111.","spans":[{"start_position":10,"end_position":21,"entity_type":"SSN"},{"start_position":52,"end_position":71,"entity_type":"CREDIT_CARD"}]}
+{"full_text":"Contact support at support@example.org for help.","spans":[{"start_position":19,"end_position":38,"entity_type":"EMAIL"}]}
+{"full_text":"There is no personal information in this sentence.","spans":[]}

@@ -1,0 +1,7 @@
+classifier:
+  pii_model:
+    model_id: "models/mmbert32k-pii-detector-merged"
+    threshold: 0.7
+    use_cpu: true
+    use_mmbert_32k: true
+    pii_mapping_path: "models/mmbert32k-pii-detector-merged/pii_type_mapping.json"

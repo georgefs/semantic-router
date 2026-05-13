@@ -1,0 +1,6 @@
+feedback_detector:
+  enabled: true
+  model_id: "models/mmbert32k_feedback_detector"
+  threshold: 0.7
+  use_cpu: true
+  use_mmbert_32k: true
