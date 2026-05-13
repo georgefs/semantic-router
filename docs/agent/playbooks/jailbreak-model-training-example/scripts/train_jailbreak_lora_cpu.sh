@@ -4,13 +4,15 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/../../../../.." && pwd)"
 
-MODEL="${MODEL:-bert-base-uncased}"
+# MoM Architecture: Use mmBERT-32K as unified base model
+# For backward compatibility, support both BERT and mmBERT
+MODEL="${MODEL:-llm-semantic-router/mmbert-32k-yarn}"
 EPOCHS="${EPOCHS:-8}"
-LORA_RANK="${LORA_RANK:-8}"
-LORA_ALPHA="${LORA_ALPHA:-16}"
-MAX_SAMPLES="${MAX_SAMPLES:-7000}"
-BATCH_SIZE="${BATCH_SIZE:-2}"
-LEARNING_RATE="${LEARNING_RATE:-3e-5}"
+LORA_RANK="${LORA_RANK:-16}"
+LORA_ALPHA="${LORA_ALPHA:-32}"
+MAX_SAMPLES="${MAX_SAMPLES:-1000}"
+BATCH_SIZE="${BATCH_SIZE:-16}"
+LEARNING_RATE="${LEARNING_RATE:-2e-5}"
 QUICK="${QUICK:-false}"
 
 ARGS=(

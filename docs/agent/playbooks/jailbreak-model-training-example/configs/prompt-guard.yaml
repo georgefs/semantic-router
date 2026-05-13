@@ -1,8 +1,8 @@
 prompt_guard:
   enabled: true
-  model_id: "models/mom-jailbreak-classifier"
+  model_id: "mmbert32k_jailbreak_detector"
   threshold: 0.7
   use_cpu: true
   use_modernbert: false
-  use_mmbert_32k: true
-  jailbreak_mapping_path: "models/mom-jailbreak-classifier/jailbreak_type_mapping.json"
+  use_mmbert_32k: true  # ← MoM architecture (mmBERT-32K base)
+  jailbreak_mapping_path: "models/mmbert32k_jailbreak_detector/jailbreak_type_mapping.json"
