@@ -19,6 +19,7 @@ __pycache__/
 .venv/
 .venv-agent/
 .agent-harness/
+.vllm-sr/
 venv/
 env/
 ENV/

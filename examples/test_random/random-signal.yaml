@@ -1,0 +1,89 @@
+---
+version: v0.3
+
+listeners:
+  - name: http-8899
+    address: 0.0.0.0
+    port: 8899
+    timeout: 1200s
+
+providers:
+  defaults:
+    default_model: Google-Gemma-3-27B
+  models:
+    - name: gemma-4-31B-it-low
+      provider_model_id: openrouter/gemma-4-31B-it
+      backend_refs:
+        - name: nchc-openrouter
+          base_url: http://127.0.0.1:18080/api/v1
+          provider: openrouter
+          auth_header: Authorization
+          auth_prefix: Bearer
+          api_key: dummy
+          weight: 1
+    - name: Google-Gemma-3-27B
+      provider_model_id: openrouter/Google-Gemma-3-27B
+      backend_refs:
+        - name: nchc-openrouter
+          base_url: http://127.0.0.1:18080/api/v1
+          provider: openrouter
+          auth_header: Authorization
+          auth_prefix: Bearer
+          api_key: dummy
+          weight: 1
+
+routing:
+  modelCards:
+    - name: gemma-4-31B-it-low
+      description: Route target when random_signal is greater than 5.
+      modality: text
+    - name: Google-Gemma-3-27B
+      description: Default route when random_signal is 5 or below.
+      modality: text
+  session_states:
+    - name: routing_session
+      fields:
+        - name: random_signal
+          type: float
+  signals:
+    session_metrics:
+      - name: random_signal
+        kind: state
+        state: routing_session.random_signal
+  projections:
+    scores:
+      - name: random_signal_score
+        method: weighted_sum
+        inputs:
+          - type: session_metric
+            name: random_signal
+            weight: 1.0
+            value_source: raw
+    mappings:
+      - name: random_signal_band
+        source: random_signal_score
+        method: threshold_bands
+        outputs:
+          - name: random_signal_le_5
+            lt: 5
+          - name: random_signal_gt_5
+            gte: 5
+  decisions:
+    - name: random_signal_gt_5_route
+      description: Use gemma-4-31B-it-low when random_signal is greater than 5.
+      priority: 100
+      rules:
+        operator: OR
+        conditions:
+          - type: projection
+            name: random_signal_gt_5
+      modelRefs:
+        - model: gemma-4-31B-it-low
+    - name: random_signal_fallback_route
+      description: Use Google-Gemma-3-27B for all other requests.
+      priority: 0
+      rules:
+        operator: AND
+        conditions: []
+      modelRefs:
+        - model: Google-Gemma-3-27B

@@ -1,0 +1,8 @@
+{"text":"Thanks, that's helpful!","label":"SAT"}
+{"text":"What do you mean by that?","label":"NEED_CLARIFICATION"}
+{"text":"No, that's wrong.","label":"WRONG_ANSWER"}
+{"text":"Show me other options.","label":"WANT_DIFFERENT"}
+{"text":"Perfect, exactly what I needed.","label":"SAT"}
+{"text":"Can you explain the second step again?","label":"NEED_CLARIFICATION"}
+{"text":"That answer is not correct.","label":"WRONG_ANSWER"}
+{"text":"I want a different approach.","label":"WANT_DIFFERENT"}

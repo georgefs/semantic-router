@@ -1,0 +1,7 @@
+classifier:
+  pii_model:
+    model_id: "mmbert32k_pii_detector"
+    threshold: 0.7
+    use_cpu: true
+    use_mmbert_32k: true  # ← MoM architecture (mmBERT-32K base)
+    pii_mapping_path: "models/mmbert32k_pii_detector/pii_type_mapping.json"

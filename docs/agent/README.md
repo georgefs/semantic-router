@@ -50,10 +50,18 @@ This directory is the human-readable system of record for the repository's agent
 
 - [skill-catalog.md](skill-catalog.md)
   - human-readable index of primary, fragment, and support skills
+- [playbooks/README.md](playbooks/README.md)
+  - index for routing playbooks and training examples
 - [playbooks/go-router.md](playbooks/go-router.md)
 - [playbooks/rust-bindings.md](playbooks/rust-bindings.md)
+- [playbooks/custom-signal.md](playbooks/custom-signal.md)
+- [playbooks/model-selection-algorithms.md](playbooks/model-selection-algorithms.md)
+- [playbooks/feedback-model-training-example/README.md](playbooks/feedback-model-training-example/README.md)
+- [playbooks/jailbreak-model-training-example/README.md](playbooks/jailbreak-model-training-example/README.md)
+- [playbooks/pii-model-training-example/README.md](playbooks/pii-model-training-example/README.md)
 - [playbooks/vllm-sr-cli-docker.md](playbooks/vllm-sr-cli-docker.md)
 - [playbooks/e2e-selection.md](playbooks/e2e-selection.md)
+- [playbooks/category-signal-model-training-example/README.md](playbooks/category-signal-model-training-example/README.md)
 - nearest local `AGENTS.md` files under hotspot directories
 
 ## Executable Contract

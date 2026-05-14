@@ -210,10 +210,17 @@ docs:
   - docs/agent/amd-local.md
   - docs/agent/feature-complete-checklist.md
   - docs/agent/architecture-guardrails.md
+  - docs/agent/playbooks/README.md
+  - docs/agent/playbooks/model-selection-algorithms.md
   - docs/agent/playbooks/go-router.md
   - docs/agent/playbooks/rust-bindings.md
+  - docs/agent/playbooks/custom-signal.md
+  - docs/agent/playbooks/feedback-model-training-example/README.md
+  - docs/agent/playbooks/jailbreak-model-training-example/README.md
+  - docs/agent/playbooks/pii-model-training-example/README.md
   - docs/agent/playbooks/vllm-sr-cli-docker.md
   - docs/agent/playbooks/e2e-selection.md
+  - docs/agent/playbooks/category-signal-model-training-example/README.md
   - deploy/amd/README.md
 
 local_agent_rules:
@@ -279,6 +286,27 @@ doc_governance:
     - path: docs/agent/README.md
       steward: agent-contract
       freshness: update when canonical harness docs are added, removed, or reorganized
+    - path: docs/agent/playbooks/README.md
+      steward: agent-contract
+      freshness: update when playbook index coverage or ordering changes
+    - path: docs/agent/playbooks/model-selection-algorithms.md
+      steward: agent-contract
+      freshness: update when model-selection guidance or examples change
+    - path: docs/agent/playbooks/custom-signal.md
+      steward: agent-contract
+      freshness: update when the signal-customization playbook or its referenced file surfaces change
+    - path: docs/agent/playbooks/feedback-model-training-example/README.md
+      steward: agent-contract
+      freshness: update when feedback training examples or referenced artifacts change
+    - path: docs/agent/playbooks/jailbreak-model-training-example/README.md
+      steward: agent-contract
+      freshness: update when jailbreak training examples or referenced artifacts change
+    - path: docs/agent/playbooks/category-signal-model-training-example/README.md
+      steward: agent-contract
+      freshness: update when category-signal training examples or referenced artifacts change
+    - path: docs/agent/playbooks/pii-model-training-example/README.md
+      steward: agent-contract
+      freshness: update when PII training examples or referenced artifacts change
     - path: docs/agent/context-management.md
       steward: agent-contract
       freshness: update when the task-first disclosure model or context-pack flow changes
